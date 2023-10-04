@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 public class TestTaskFour extends AbstractTest {
 
     @Tested
-    JobTest jobTest;
+    public org.launchcode.techjobs.oo.JobTest jobTest;
     @Mocked
     Job job;
     @Mocked
