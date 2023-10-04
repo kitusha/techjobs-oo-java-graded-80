@@ -8,14 +8,17 @@ public class Location {
     private static int nextId = 1;
     private String value;
 
+    // First constructor to initialize id field
     public Location() {
         id = nextId;
         nextId++;
     }
 
-    // TODO: Add a constructor that takes a string as a parameter and assigns it to the 'value' field. The
-    //  constructor should also call the empty constructor in order to initialize the 'id' field.
-
+    // Second constructor as per the TODO comment
+    public Location(String value) {
+        this(); // Call the empty constructor to initialize the id field
+        this.value = value; // Initialize the value field
+    }
 
     // Custom toString, equals, and hashCode methods:
 
@@ -50,5 +53,4 @@ public class Location {
     public void setValue(String value) {
         this.value = value;
     }
-
 }
