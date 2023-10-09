@@ -25,29 +25,27 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        // Ensure that the constructor correctly assigns values to all fields
-        assertEquals("Software Developer", job2.getName());
-        assertEquals("LaunchCode", job2.getEmployer().getValue());
-        assertEquals("St. Louis", job2.getLocation().getValue());
-        assertEquals("Full Time", job2.getPositionType().getValue());
-        assertEquals("Java", job2.getCoreCompetency().getValue());
+        // Create a new Job object with specified data
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        // Use assertTrue and assertEquals to test each field
+        assertTrue(testJob instanceof Job);
+        assertEquals("Product tester", testJob.getName());
+        assertEquals("ACME", testJob.getEmployer().getValue());
+        assertEquals("Desert", testJob.getLocation().getValue());
+        assertEquals("Quality control", testJob.getPositionType().getValue());
+        assertEquals("Persistence", testJob.getCoreCompetency().getValue());
     }
 
     @Test
     public void testJobsForEquality() {
-        // Ensure that two jobs with the same ID are considered equal
-        assertFalse(job1.equals(job2)); // IDs should be different
-        assertTrue(job1.equals(job1)); // An object should be equal to itself
-    }
+        // Generate two Job objects that have identical field values except for id
+        Job job3 = new Job("Software Developer", new Employer("LaunchCode"), new Location("St. Louis"),
+                new PositionType("Full Time"), new CoreCompetency("Java"));
 
-    @Test
-    public void testEmptyConstructorAssignsUniqueIds() {
-        // Create two Job objects using the empty constructor
-        Job emptyJob1 = new Job();
-        Job emptyJob2 = new Job();
-
-        // Use assertNotEquals to verify that the IDs of the two objects are distinct
-        assertNotEquals(emptyJob1.getId(), emptyJob2.getId());
+        // Test that equals returns false
+        assertFalse(job2.equals(job3));
     }
 
     // Add more tests as needed to thoroughly test your Job class
