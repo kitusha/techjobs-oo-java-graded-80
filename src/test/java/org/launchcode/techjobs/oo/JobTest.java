@@ -48,5 +48,25 @@ public class JobTest {
         assertFalse(job2.equals(job3));
     }
 
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        // Test that toString starts and ends with a new line
+        String toStringResult = job2.toString();
+        assertTrue(toStringResult.startsWith(System.lineSeparator()));
+        assertTrue(toStringResult.endsWith(System.lineSeparator()));
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        // Test that toString contains correct labels and data
+
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+        // Test that toString handles empty fields correctly
+        // Implement this test and make sure it fails initially
+    }
+
     // Add more tests as needed to thoroughly test your Job class
 }

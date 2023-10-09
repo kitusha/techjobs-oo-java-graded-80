@@ -42,6 +42,18 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
+    @Override
+    public String toString() {
+        return System.lineSeparator() +
+                "ID: " + id + System.lineSeparator() +
+                "Name: " + (name.isEmpty() ? "Data not available" : name) + System.lineSeparator() +
+                "Employer: " + (employer == null ? "Data not available" : employer.getValue()) + System.lineSeparator() +
+                "Location: " + (location == null ? "Data not available" : location.getValue()) + System.lineSeparator() +
+                "Position Type: " + (positionType == null ? "Data not available" : positionType.getValue()) + System.lineSeparator() +
+                "Core Competency: " + (coreCompetency == null ? "Data not available" : coreCompetency.getValue()) +
+                System.lineSeparator();
+    }
+
 
     // Getters and Setters:
 
