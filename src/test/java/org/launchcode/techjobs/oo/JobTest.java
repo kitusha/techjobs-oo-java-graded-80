@@ -2,7 +2,6 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.launchcode.techjobs.oo.*;
 
 import static org.junit.Assert.*;
 
@@ -39,6 +38,16 @@ public class JobTest {
         // Ensure that two jobs with the same ID are considered equal
         assertFalse(job1.equals(job2)); // IDs should be different
         assertTrue(job1.equals(job1)); // An object should be equal to itself
+    }
+
+    @Test
+    public void testEmptyConstructorAssignsUniqueIds() {
+        // Create two Job objects using the empty constructor
+        Job emptyJob1 = new Job();
+        Job emptyJob2 = new Job();
+
+        // Use assertNotEquals to verify that the IDs of the two objects are distinct
+        assertNotEquals(emptyJob1.getId(), emptyJob2.getId());
     }
 
     // Add more tests as needed to thoroughly test your Job class
