@@ -38,7 +38,7 @@ public class CoreCompetency extends JobField {
         return Objects.hash(id);
     }
 
-    // Generated getters and setters:
+
 
     public int getId() {
         return id;
@@ -48,7 +48,7 @@ public class CoreCompetency extends JobField {
         return value;
     }
 
-    // Generated setter for 'value' field
+    //  setter for 'value' field
     public void setValue(String value) {
         this.value = value;
     }

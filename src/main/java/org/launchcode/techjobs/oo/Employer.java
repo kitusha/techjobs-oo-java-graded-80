@@ -6,14 +6,14 @@ public class Employer extends JobField {
 
     private String value;
 
-    // Constructors for Employer (keep them if needed)...
+    // Constructors for Employer ...
 
     public Employer(String value) {
         super();
         this.value = value;
     }
 
-    // Custom toString, equals, and hashCode methods:
+    //  toString, equals, and hashCode methods:
 
     @Override
     public String toString() {
