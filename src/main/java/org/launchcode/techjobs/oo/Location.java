@@ -2,22 +2,15 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Location {
+public class Location extends JobField {
 
-    private int id;
-    private static int nextId = 1;
+    // Constructors for Location (keep them if needed)...
+
     private String value;
 
-    // First constructor to initialize id field
-    public Location() {
-        id = nextId;
-        nextId++;
-    }
-
-    // Second constructor as per the TODO comment
     public Location(String value) {
-        this(); // Call the empty constructor to initialize the id field
-        this.value = value; // Initialize the value field
+        super();
+        this.value = value;
     }
 
     // Custom toString, equals, and hashCode methods:
@@ -42,15 +35,16 @@ public class Location {
 
     // Getters and Setters:
 
-    public int getId() {
-        return id;
-    }
-
     public String getValue() {
         return value;
     }
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    @Override
+    public String getLabel() {
+        return "Location";
     }
 }
