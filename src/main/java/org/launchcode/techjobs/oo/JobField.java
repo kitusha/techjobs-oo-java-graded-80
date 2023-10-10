@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.Objects;
+
 public abstract class JobField {
 
     private int id;
@@ -7,17 +9,38 @@ public abstract class JobField {
     private String value;
 
     // Constructors
-    public JobField() {
+    protected JobField() {
         id = nextId;
         nextId++;
     }
 
-    public JobField(String value) {
+    protected JobField(String value) {
         this();
         this.value = value;
     }
 
-    // Getters and Setters
+    // Custom toString, equals, and hashCode methods:
+
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof JobField)) return false;
+        JobField that = (JobField) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    // Getters and Setters:
+
     public int getId() {
         return id;
     }
@@ -30,14 +53,6 @@ public abstract class JobField {
         this.value = value;
     }
 
-    // Custom methods (if any)...
-
-    // Make the class abstract to prevent direct instantiation
-    // (Concrete subclasses will implement the abstract methods)
+    // Abstract method for label
     public abstract String getLabel();
-
-    @Override
-    public String toString() {
-        return getLabel() + ": " + getValue();
-    }
 }
